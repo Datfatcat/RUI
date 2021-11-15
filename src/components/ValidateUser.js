@@ -18,9 +18,11 @@ export default class ValidateUser extends React.Component {
         });
     }
 
+    //http://cors-everywhere.herokuapp.com/
+
     handleSubmit = (e) => {
         alert('Form submitted!');
-        fetch("http://104.34.230.121:3000/requestValidation", { 
+        fetch("http://cors-everywhere.herokuapp.com/http://104.34.230.121:3000/requestValidation", { 
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: { 'content-type': 'application/json' }
