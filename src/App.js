@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './App.css';
 import GetBlock from "./components/GetBlock";
+import ValidateUser from "./components/ValidateUser";
 
 class App extends React.Component {
 
@@ -11,7 +12,7 @@ class App extends React.Component {
 	render() {
     return(
       <div className="App">
-        <GetBlock />
+        <ValidateUser />
       </div>
     )
   }
