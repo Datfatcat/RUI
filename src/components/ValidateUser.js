@@ -1,4 +1,6 @@
+//import { response } from "express";
 import React from "react";
+//import response from 'express';
 
 export default class ValidateUser extends React.Component {
 
@@ -23,9 +25,16 @@ export default class ValidateUser extends React.Component {
             body: JSON.stringify(this.state),
             headers: { 'content-type': 'application/json' }
         }).then(function(response){
-            console.log(response)
-            return response;
+            return response.text();
+        }).then(data => {
+            console.log(data)
+            document.getElementById("para").innerHTML = data
         });
+               
+     /*   }).then(response => response.text())
+          .then(data => {
+            console.log(data)
+          */ 
 
         e.preventDefault();
     }
@@ -42,7 +51,9 @@ export default class ValidateUser extends React.Component {
                         onChange={this.handleChange}
                         ></input>
                         <input type="submit" value="Submit" />
+                        <p id="para"></p>
                 </form>
+                
         )
     }
 
