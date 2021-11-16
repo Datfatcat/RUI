@@ -1,10 +1,13 @@
 //import { response } from "express";
 import React from "react";
+import { Redirect } from "react-router";
+//import GetBlock from "./GetBlock";
 //import response from 'express';
 
 export default class ValidateUser extends React.Component {
 
     constructor(props){
+        //const history = useHistory();
         super(props)
     
         this.state = {
@@ -18,16 +21,19 @@ export default class ValidateUser extends React.Component {
         });
     }
 
+
+    
+
     //http://cors-everywhere.herokuapp.com/
 
     handleSubmit = (e) => {
         alert('Form submitted!');
-        fetch("http://cors-everywhere.herokuapp.com/http://104.34.230.121:3000/requestValidation", { 
+        fetch("http://104.34.230.121:3000/requestValidation", { 
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: { 'content-type': 'application/json' }
         }).then(function(response){
-            return response.text();
+            return response.text()
         }).then(data => {
             console.log(data)
             document.getElementById("para").innerHTML = data
@@ -37,7 +43,9 @@ export default class ValidateUser extends React.Component {
           .then(data => {
             console.log(data)
           */ 
-
+        
+        //this.props.history.push('/components/GetBlock');
+        
         e.preventDefault();
     }
 
