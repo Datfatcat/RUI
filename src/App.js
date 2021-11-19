@@ -11,7 +11,10 @@ class App extends React.Component {
       visible: true
 		};
 
+    //let history = useHistory();
+
 	render() {
+   
     return(
       <Router>
         <div className="App">
@@ -19,7 +22,7 @@ class App extends React.Component {
               <Route exact path="/">
                 <ValidateUser />
               </Route>
-              <Route path="/getblock">
+              <Route exact path="/GetBlock" component={GetBlock}>
                 <GetBlock />
               </Route>
             </Switch>
