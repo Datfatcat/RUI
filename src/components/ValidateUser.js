@@ -34,7 +34,7 @@ export default class ValidateUser extends React.Component {
 
     handleSubmit = (e) => {
         alert('Registration submitted!');
-        fetch("http://104.34.230.121:3000/requestValidation", { 
+        fetch("https://cors-everywhere.herokuapp.com/http://104.34.230.121:3000/requestValidation", { 
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: { 'content-type': 'application/json' },
@@ -62,7 +62,7 @@ export default class ValidateUser extends React.Component {
     handleSubmitConfirm = (e) => {
         alert('Opinion submitted!');
         console.log(JSON.stringify(this.state))
-        fetch("http://104.34.230.121:3000/submitStar", { 
+        fetch("https://cors-everywhere.herokuapp.com/http://104.34.230.121:3000/submitStar", { 
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: { 'content-type': 'application/json' },
