@@ -4,6 +4,7 @@ import { Link, Redirect, BrowserRouter } from "react-router-dom";
 import { Fragment } from "react/cjs/react.production.min";
 //import GetBlock from "./GetBlock";
 //import response from 'express';
+import "./ValidateUser.css";
 
 export default class ValidateUser extends React.Component {
 
@@ -34,7 +35,7 @@ export default class ValidateUser extends React.Component {
 
     handleSubmit = (e) => {
         alert('Registration submitted!');
-        fetch("http://ec2-54-151-16-73.us-west-1.compute.amazonaws.com:8888/requestValidation", { 
+        fetch("https://cors-everywhere.herokuapp.com/http://ec2-54-151-16-73.us-west-1.compute.amazonaws.com:8888/requestValidation", { 
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: { 'content-type': 'application/json' },
@@ -62,7 +63,7 @@ export default class ValidateUser extends React.Component {
     handleSubmitConfirm = (e) => {
         alert('Opinion submitted!');
         console.log(JSON.stringify(this.state))
-        fetch("http://ec2-54-151-16-73.us-west-1.compute.amazonaws.com:8888/submitStar", { 
+        fetch("https://cors-everywhere.herokuapp.com/http://ec2-54-151-16-73.us-west-1.compute.amazonaws.com:8888/submitStar", { 
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: { 'content-type': 'application/json' },
@@ -140,4 +141,5 @@ export default class ValidateUser extends React.Component {
     }
 
 }
+
 
