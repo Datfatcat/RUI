@@ -14,7 +14,7 @@ export default class GetBlock extends React.Component {
 	// ComponentDidMount is used to
 	// execute the code
 	async componentDidMount() {
-		const response = await fetch("http://104.34.230.121:3000/block/height/3", { mode: 'cors' });
+		const response = await fetch("https://cors-everywhere.herokuapp.com/http://ec2-54-151-16-73.us-west-1.compute.amazonaws.com:8888/block/height/3", { mode: 'cors' });
     const data = await response.json();
     this.setState({user: data, loading: false});
     console.log(decode(this.state.user.body));
