@@ -1,31 +1,29 @@
 //import { Router } from "express";
 import React, { Component } from "react";
 import './App.css';
+import Home from "./components/Home";
 import GetBlock from "./components/GetBlock";
 import ValidateUser from "./components/ValidateUser";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Redirect from "./components/Redirect";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class App extends React.Component {
 
-		state = {
-      visible: true
-		};
+  state = {
+    visible: true
+  };
 
-    //let history = useHistory();
-
-	render() {
-   
-    return(
+  render() {
+    return (
       <Router>
         <div className="App">
-            <Switch>
-              <Route exact path="/">
-                <ValidateUser />
-              </Route>
-              <Route exact path="/GetBlock" component={GetBlock}>
-                <GetBlock />
-              </Route>
-            </Switch>
+          <Switch>
+            <Route component={Home} exact path="/"></Route>
+            <Route component={Redirect} path="/redirect"></Route>
+            <Route component={GetBlock} path="/getblock"></Route>
+            
+
+          </Switch>
         </div>
       </Router>
 
