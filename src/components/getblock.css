@@ -5,4 +5,41 @@ body {
     font-family: Arial;
     inline-size: 75%;
     overflow-wrap: break-word;
+    align: left
   }
+/*
+  <h2>Hash</h2>
+  <p>{this.state.user.hash}</p>
+  <br/>
+<h2>Height</h2>
+  <p>{this.state.user.height}</p>
+  <br/>
+<h2>Body</h2>
+  <p>{decode(this.state.user.body)}</p>
+  <br/>
+<h2>Time</h2>
+ <p>{this.state.user.time}</p>
+ <br/>
+<h2>Previous Block Hash</h2>
+ <p>{this.state.user.previousBlockHash}</p>
+*/
+ /*
+        <div>
+            <h1>Transactions of the Block</h1>
+            <br/>
+            <h3>Whole</h3>
+            <p id="whole"></p>
+            <h3>Hash</h3>
+            <p id="hash"></p>
+            <h3>Height</h3>
+            <p id="height"></p>
+            <h3>Body</h3>
+            <p id="body"></p>
+            <h3>Time</h3>
+            <p id="time"></p>
+            <h3>Rrevious Block Hash</h3>
+            <p id="previousBlockHash"></p>
+
+
+        </div>
+*/

@@ -11,16 +11,43 @@ export default class GetBlock extends React.Component {
 		user: null
 	};
 
+//http://ec2-54-151-16-73.us-west-1.compute.amazonaws.com:8888/block/height/3
+//http://104.34.230.121:3000/block/heights
+
 	// ComponentDidMount is used to
 	// execute the code
 	async componentDidMount() {
-		const response = await fetch("https://cors-everywhere.herokuapp.com/http://ec2-54-151-16-73.us-west-1.compute.amazonaws.com:8888/block/height/3", { mode: 'cors' });
+		const response = await fetch("https://cors-everywhere.herokuapp.com/http://104.34.230.121:3000/block/heights", { mode: 'cors' });
     const data = await response.json();
     this.setState({user: data, loading: false});
-    console.log(decode(this.state.user.body));
+    console.log(response);
+    console.log(data);
+    document.getElementById("hash").innerHTML = JSON.stringify(data[0].hash);
+/*
+    for(var i =0; i < data.length; i++){
+      rows.push(
+        <div>{JSON.stringify(data[i].hash)}
+        <div>{JSON.stringify(data[i].height)}</div>
+        <div>{JSON.stringify(data[i].body)}</div>
+        <div>{JSON.stringify(data[i].time)}</div>
+        <div>{JSON.stringify(data[i].previousBlockHash)}</div>
+        </div>
+      );
+    });
+    */
+/*
+    for(var i =0; i < data.length; i++){
+      document.getElementById("hash").innerHTML = JSON.stringify(data[i].hash);
+      document.getElementById("height").innerHTML = JSON.stringify(data[i].height);
+      document.getElementById("body").innerHTML = JSON.stringify(data[i].body);
+      document.getElementById("time").innerHTML = JSON.stringify(data[i].time);
+      document.getElementById("previousBlockHash").innerHTML = JSON.stringify(data[i].previousBlockHash);
+    }
+*/
 	}
-   
+  //{this.state.user}
     render() {
+      
       if(this.state.loading){
         return <div>Loading...</div>;
       }
@@ -29,28 +56,34 @@ export default class GetBlock extends React.Component {
         return <div>No user</div>;
       }
 
+
       return (
-
         <div>
-            <h1>Transactions of the Block</h1>
-            <br/>
-              <h2>Hash</h2>
-                <p>{this.state.user.hash}</p>
+          <h1>Reputation Score Full Blockchain</h1>
+          &nbsp;
+          {this.state.user.map(block => (
+            <div key={block.uuid}>
+              <h4>Block {block.height}</h4>
+              <h6 align="left">Hash</h6>
+                <div align="left">{block.hash}</div>
                 <br/>
-              <h2>Height</h2>
-                <p>{this.state.user.height}</p>
+              <h6 align="left">Body:</h6>
+                <div align="left">{decode(block.body)}</div>
                 <br/>
-              <h2>Body</h2>
-                <p>{decode(this.state.user.body)}</p>
+              <h6 align="left">Time:</h6>
+                <div align="left">{new Date(block.time * 1000).toISOString().substr(11, 8)}</div>
                 <br/>
-              <h2>Time</h2>
-               <p>{this.state.user.time}</p>
-               <br/>
-              <h2>Previous Block Hash</h2>
-               <p>{this.state.user.previousBlockHash}</p>
-
+              <h6 align="left">Previous Block Hash:</h6>
+                <div align="left">{block.previousBlockHash}</div>
+                <br/>
+                <hr></hr>
+              &nbsp;
+            </div>
+          ))}
+          <p id="hash"></p>
         </div>
-
       );
+      
     }
+    
 }
