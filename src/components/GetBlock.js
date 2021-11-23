@@ -22,7 +22,6 @@ export default class GetBlock extends React.Component {
     this.setState({user: data, loading: false});
     console.log(response);
     console.log(data);
-    document.getElementById("hash").innerHTML = JSON.stringify(data[0].hash);
 /*
     for(var i =0; i < data.length; i++){
       rows.push(
@@ -80,7 +79,6 @@ export default class GetBlock extends React.Component {
               &nbsp;
             </div>
           ))}
-          <p id="hash"></p>
         </div>
       );
       
