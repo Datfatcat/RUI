@@ -19,35 +19,15 @@ export default class GetBlock extends React.Component {
 	async componentDidMount() {
 		// fetch block transactions from the following link
 		const response = await fetch("https://cors-everywhere.herokuapp.com/http://104.34.230.121:3000/block/heights", { mode: 'cors' });
-	//take the response from the API
-    const data = await response.json();
-	// set the response as data
-    this.setState({user: data, loading: false});
-    console.log(response);
-    console.log(data);
-/*
-    for(var i =0; i < data.length; i++){
-      rows.push(
-        <div>{JSON.stringify(data[i].hash)}
-        <div>{JSON.stringify(data[i].height)}</div>
-        <div>{JSON.stringify(data[i].body)}</div>
-        <div>{JSON.stringify(data[i].time)}</div>
-        <div>{JSON.stringify(data[i].previousBlockHash)}</div>
-        </div>
-      );
-    });
-    */
-/*
-    for(var i =0; i < data.length; i++){
-      document.getElementById("hash").innerHTML = JSON.stringify(data[i].hash);
-      document.getElementById("height").innerHTML = JSON.stringify(data[i].height);
-      document.getElementById("body").innerHTML = JSON.stringify(data[i].body);
-      document.getElementById("time").innerHTML = JSON.stringify(data[i].time);
-      document.getElementById("previousBlockHash").innerHTML = JSON.stringify(data[i].previousBlockHash);
-    }
-*/
+		//take the response from the API
+		const data = await response.json();
+			// set the response as data
+		this.setState({user: data, loading: false});
+		console.log(response);
+		console.log(data);
 	}
-  //{this.state.user}
+	
+	
     render() {
       
       if(this.state.loading){
