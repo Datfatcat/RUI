@@ -49,7 +49,7 @@ export default class GetBlock extends React.Component {
 	     <!-- FOR EACH BLOCK >
 	      	<!--- print out the hash, body, time, and previous block hash --->
 	      
-	      	<!--- Redundant to add subheading for block heigt, so it's used to indicate which block instead --->
+	      	<!--- Redundant to add subheading for block heigt, so it is used to indicate which block instead  --->
               <h4>Block {block.height}</h4>
               <h6 align="left">Hash</h6>
                 <div align="left">{block.hash}</div>
