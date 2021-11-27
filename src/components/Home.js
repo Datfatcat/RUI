@@ -10,29 +10,22 @@ import './home.css';
 //var logo = require('./src/img/OTRL_2019_Logo_WithTagline.jpg');
 
 function Home(){
-/*
-    const history = useHistory();
-    const routeReg=()=>{
-        let path = '/redirect';
-        history.push(path);
-    }
+    
+    // Comments of what the code does in return
+    
+    // Button to redirect to Redirect.js
+    
+    // Space to add between the buttons
+    
+    // Button to redirect to GetBlock.js
 
-    const routeBlock=()=>{
-        let path = '/getblock';
-        history.push(path);
-    }
-*/
-/*
-    const dimensions = Dimensions.get('window');
-    const imageHeight = Math.round(dimensions.width * 9/16);
-    const imageWidth = dimensions.width;
-    */
         return(
             
             <div className="d-grid gap-2">
                 <img src={logo} alt="Logo" class="center" height="100" width="100"/>
                 <h2 align="center">Reputation Score Index</h2>
-
+                
+                
                 <Button variant="primary" color="primary" size="lg" width="50%" href="/redirect">
                     Register
                 </Button>{' '}
@@ -40,7 +33,7 @@ function Home(){
                 &nbsp;
                 &nbsp;
                 &nbsp;
-
+            
                 <Button variant="primary" color="primary" size="lg" width="75%" href="/getblock">
                     Block Transactions
                 </Button>
