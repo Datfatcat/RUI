@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import './App.css';
 import Home from "./components/Home";
 import GetBlock from "./components/GetBlock";
-import ValidateUser from "./components/ValidateUser";
 import Redirect from "./components/Redirect";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
